@@ -1,0 +1,52 @@
+x= 7
+
+num= 5
+#what is happening behind the scenes? In our system we will have a memory location that stores the value of num.
+#how do we know the address?
+
+#we can use the id() function to get the memory address of a variable
+print(id(num))
+
+#or id(num) in idle
+
+name = "Risper"
+print(id(name))
+#each time we print the values they change because the memory location changes to
+a= 10
+b = a
+#how many boxes are created in the memory?
+#we should be having two boxes, 1 for a and 1 for b both having the value 10
+
+#lets verify
+print(id(a))
+print(id(b))
+print(id(10))
+
+k= 10
+
+print(id(k))
+
+#both a and b have the same memory location.
+#this is because in Python if we have variables that have the same value/data, they will share the same memory location
+#So 10 is a value and  we are tagging a,b ,k to the same memory location
+
+a= 9
+print(id(a))
+k=a
+print(id(k))
+
+#now if we change the value of b
+b=8
+print(id(b))
+
+#now, a=9,b=8 and k=a so k=9 all 
+#have different memory locations, what happens to the memory location of 10? Yet no one is pointing to it
+#Python has a garbage collector that will remove the memory location of 10 if no one is pointing to it
+
+#what happens if we have constants?
+
+#constants are values that do not change
+ PI = 3.14
+ #UNFORUNATELY, Python does not have a way of creating constants and helping people not 
+    #to change the value of the constant
+#we can use the upper case to show that the value should not be changed
